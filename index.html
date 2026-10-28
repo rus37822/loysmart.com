@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="smartIngat - pengingat pengembalian buku untuk siswa.">
+  <title>smartIngat | Pengingat Pengembalian Buku</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="announcement"><span>smartIngat</span> bantu kamu mengembalikan buku tepat waktu</div>
+    <nav class="nav container" aria-label="Navigasi utama">
+      <a class="brand" href="#beranda" aria-label="smartIngat beranda"><span class="brand-mark">S</span><span>smartIngat</span></a>
+      <div class="nav-links">
+        <a href="#buku">Buku saya</a>
+        <a href="#cara-kerja">Cara kerja</a>
+        <a href="#bantuan">Bantuan</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-button" id="search-toggle" aria-label="Cari buku" title="Cari buku"><i data-lucide="search"></i></button>
+        <button class="icon-button cart-button" id="cart-toggle" aria-label="Buka pengingat" title="Pengingat"><i data-lucide="bell"></i><span class="cart-count">0</span></button>
+        <button class="menu-button" id="menu-toggle" aria-label="Buka menu"><i data-lucide="menu"></i></button>
+      </div>
+    </nav>
+    <div class="search-bar container" id="search-bar">
+      <i data-lucide="search"></i>
+      <input id="search-input" type="search" placeholder="Cari judul atau penulis buku..." aria-label="Cari buku">
+      <button id="search-close" aria-label="Tutup pencarian"><i data-lucide="x"></i></button>
+    </div>
+  </header>
+
+  <main id="beranda">
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow">Asisten kecil untuk siswa</p>
+        <h1>Ingat buku,<br><em>tepat waktu.</em></h1>
+        <p class="hero-text">Catat buku pinjamanmu, dapatkan pengingat sebelum tenggat, dan kembalikan tanpa rasa khawatir.</p>
+        <a class="primary-button" href="#buku">Lihat buku saya <i data-lucide="arrow-up-right"></i></a>
+        <div class="hero-note"><span class="avatar-stack"><span>✓</span><span>✓</span><span>✓</span></span><span>3 pengingat aktif minggu ini</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-wrap"><img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&w=1000&q=85" alt="Tumpukan buku di meja belajar" /></div>
+        <div class="floating-card"><span class="mini-label">Pengembalian terdekat</span><strong>Atomic Habits</strong><span class="price">Besok · 14.00</span></div>
+        <span class="sun-stamp">Baca<br>ingat</span>
+      </div>
+    </section>
+
+    <section class="category-strip container" aria-label="Filter status buku">
+      <div class="section-intro"><span class="eyebrow">Ruang baca kamu</span><h2>Kelola pinjaman</h2></div>
+      <div class="category-list" id="category-list">
+        <button class="category active" data-category="Semua">Semua <span>6</span></button>
+        <button class="category" data-category="Segera">Segera kembali <span>2</span></button>
+        <button class="category" data-category="Aman">Masih aman <span>3</span></button>
+        <button class="category" data-category="Terlambat">Terlambat <span>1</span></button>
+      </div>
+    </section>
+
+    <section class="products-section container" id="buku">
+      <div class="section-heading"><div><span class="eyebrow">Daftar pinjaman</span><h2>Buku yang harus diingat</h2></div><span class="product-total" id="product-total">6 buku</span></div>
+      <div class="product-grid" id="product-grid"></div>
+      <p class="empty-state" id="empty-state" hidden>Produk yang kamu cari belum tersedia.</p>
+    </section>
+
+    <section class="story container" id="cara-kerja">
+      <div class="story-image"><img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1000&q=85" alt="Rak buku di perpustakaan" /></div>
+      <div class="story-copy"><span class="eyebrow">Cara kerja smartIngat</span><h2>Satu tempat untuk semua tenggat.</h2><p>Tambahkan buku yang kamu pinjam, pilih tanggal pengembalian, dan biarkan smartIngat memberi tanda saat waktunya semakin dekat.</p><a class="text-link" href="#bantuan">Butuh bantuan? <i data-lucide="arrow-up-right"></i></a></div>
+    </section>
+
+    <section class="newsletter container" id="bantuan"><div><span class="eyebrow">Jangan sampai lupa</span><h2>Atur pengingat baru.</h2></div><form id="newsletter-form"><label class="sr-only" for="email">Judul buku</label><input type="text" id="email" placeholder="Masukkan judul buku..." required><button class="primary-button" type="submit">Tambah <i data-lucide="plus"></i></button></form></section>
+  </main>
+
+  <footer class="footer"><div class="container footer-inner"><a class="brand" href="#beranda"><span class="brand-mark">S</span><span>smartIngat</span></a><p>Baca dengan tenang, kembalikan tepat waktu.</p><span class="copyright">© 2024 smartIngat</span></div></footer>
+
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Daftar pengingat" aria-hidden="true"><div class="drawer-header"><h2>Pengingat aktif</h2><button class="icon-button" id="cart-close" aria-label="Tutup pengingat"><i data-lucide="x"></i></button></div><div class="cart-items" id="cart-items"><div class="cart-empty"><i data-lucide="bell"></i><p>Belum ada pengingat.</p><span>Tambahkan buku dari daftar kamu.</span></div></div><div class="drawer-footer"><div class="subtotal"><span>Total pengingat</span><strong id="subtotal">0 buku</strong></div><button class="primary-button checkout-button" id="checkout-button">Tandai semua dibaca <i data-lucide="check"></i></button></div></aside>
+  <div class="overlay" id="overlay"></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
